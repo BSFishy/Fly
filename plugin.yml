@@ -1,0 +1,27 @@
+name: "mtts Fly"
+main: me.mttprvst13.fly
+version: "0.2 beta"
+commands:
+   hey:
+      description: Greets you or another user.
+      usage: /<command> [user]
+   fly:
+      description: Toggles fly mode.
+      usage: /<command>
+
+permissions:
+    fly.*:
+        description: Gives access to all Mtt Fly commands.
+        children:
+            fly.canfly: true
+            fly.sayhey: true
+            fly.willfly: true
+    fly.canfly:
+        description: Gives access to the fly command
+        default: op
+    fly.willfly:
+        description: Sets fly mode to true when the user logs in.
+        default: op
+    fly.willfly:
+        description: Allows use of the hey command.
+        default: true
