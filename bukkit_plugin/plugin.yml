@@ -1,6 +1,6 @@
 name: "mttsFly"
 main: me.mttprvst13.fly
-version: "1.0"
+version: "1.1"
 description: "A plugin that add fly mode."
 author: mttprvst13
 commands:
