@@ -1,27 +1,23 @@
-name: "mtts Fly"
+name: "mttsFly"
 main: me.mttprvst13.fly
-version: "0.2 beta"
+version: "1.5.2 BETA"
+description: "A plugin that adds fly mode."
+author: mttprvst13
 commands:
-   hey:
-      description: Greets you or another user.
-      usage: /<command> [user]
    fly:
       description: Toggles fly mode.
-      usage: /<command>
+      usage: /<command> [playername] [on|off]
 
 permissions:
-    fly.*:
+    mfly.*:
         description: Gives access to all Mtt Fly commands.
         children:
             fly.canfly: true
             fly.sayhey: true
             fly.willfly: true
-    fly.canfly:
+    mfly.canfly:
         description: Gives access to the fly command
         default: op
-    fly.willfly:
+    mfly.willfly:
         description: Sets fly mode to true when the user logs in.
         default: op
-    fly.willfly:
-        description: Allows use of the hey command.
-        default: true
