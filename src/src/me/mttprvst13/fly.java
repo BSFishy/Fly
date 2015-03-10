@@ -15,7 +15,6 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class fly extends JavaPlugin {
 	
-	public final BukkitListener b1 = new BukkitListener(this);
 	public boolean[] isfly;
 	protected Logger log;
 	public boolean retur = true;
@@ -100,10 +99,40 @@ public class fly extends JavaPlugin {
 			Player player = (Player) sender;
 			
 			// If the player doesn't have the permission
-			if (!player.hasPermission("mfly.canfly")) {
-				player.sendMessage(ChatColor.RED + "You do not have permission to fly." +
+			if (!player.hasPermission("fly.me.toggle") && args.length == 0) {
+				player.sendMessage(ChatColor.RED + "You do not have permission to toggle your fly." +
 						" If you think this is an error, report it to an administrator.");
 				return retur;
+			}else if (!player.hasPermission("fly.me.on") && args.length == 1 && args[0].equalsIgnoreCase("on")){
+				
+				player.sendMessage(ChatColor.RED + "You do not have permission to turn your fly on." +
+						" If you think this is an error, report it to an administrator.");
+				return retur;
+				
+			}else if(!player.hasPermission("fly.me.off") && args.length == 1 && args[0].equalsIgnoreCase("off")){
+				
+				player.sendMessage(ChatColor.RED + "You do not have permission to turn your fly off." +
+						" If you think this is an error, report it to an administrator.");
+				return retur;
+				
+			}else if(!player.hasPermission("fly.others.toggle") && args.length == 1 && !args[0].equalsIgnoreCase("off") && !args[0].equalsIgnoreCase("on")){
+				
+				player.sendMessage(ChatColor.RED + "You do not have permission to toggle other player's fly." +
+						" If you think this is an error, report it to an administrator.");
+				return retur;
+				
+			}else if(!player.hasPermission("fly.others.on") && args.length == 2 && args[1].equalsIgnoreCase("on")){
+				
+				player.sendMessage(ChatColor.RED + "You do not have permission to turn other player's fly on." +
+						" If you think this is an error, report it to an administrator.");
+				return retur;
+				
+			}else if(!player.hasPermission("fly.others.off") && args.length == 2 && args[1].equalsIgnoreCase("off")){
+				
+				player.sendMessage(ChatColor.RED + "You do not have permission to turn other player's fly off." +
+						" If you think this is an error, report it to an administrator.");
+				return retur;
+				
 			}
 			
 			// Timeout
@@ -386,9 +415,9 @@ public class fly extends JavaPlugin {
 			
 			this.getId(args[0]);
 			
-			log.info(Boolean.toString(isfly[pl]));
+			log.info(Boolean.toString(this.isfly[this.pl]) + " - " + Integer.toString(this.pl));
 			
-			if(isfly[pl]){
+			if(this.isfly[this.pl]){
 				
 				sender.sendMessage(ChatColor.RED + "[mttsFly] " + ChatColor.AQUA + args[0] + ChatColor.BLUE + " is flying.");
 				return retur;

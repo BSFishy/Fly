@@ -1,0 +1,53 @@
+name: "mttsFly"
+main: me.mttprvst13.fly
+version: "1.6"
+description: "A plugin that adds fly mode."
+author: mttprvst13
+commands:
+   fly:
+      description: Toggles fly mode.
+      usage: /<command> [playername] [on|off]
+   flyspeed:
+      description: Sets fly speed.
+      usage: /<command> [1-10] [playername]
+#   flying:
+#      description: Checks if a player is flying.
+#      usage: /<command> <playername>
+      
+
+permissions:
+    fly.*:
+        description: Gives access to all Mtt Fly commands.
+        children:
+            fly.me: true
+            fly.others: true
+    fly.me:
+        description: Gives access to all your own commands
+        children:
+            fly.me.toggle: true
+            fly.me.on: true
+            fly.me.off: true
+    fly.others:
+        description: Gives access to all the other player commands
+        children:
+            fly.others.toggle: true
+            fly.others.on: true
+            fly.others.off: true
+    fly.me.toggle:
+        description: Gives access to toggle your own fly.
+        default: op
+    fly.me.on:
+        description: Gives access to turn on your own fly.
+        default: op
+    fly.me.off:
+        description: Gives access to turn off your own fly.
+        default: op
+    fly.others.toggle:
+        description: Gives access to toggle other player's fly.
+        default: op
+    fly.others.on:
+        description: Gives access to turn on other player's fly.
+        default: op
+    fly.others.off:
+        description: Gives access to turn off other player's fly.
+        default: op
