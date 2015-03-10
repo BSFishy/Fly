@@ -1,0 +1,12 @@
+#############################################################################
+##                      mttsFly Auto Generated Config                      ##
+##																		   ##
+#############################################################################
+
+# If you want this to automatically download new updates
+# set this to true. Otherwise set it to false.
+downloadUpdate: false
+
+# The timeout time you want. You automatically have this
+# if you don't have the mttsfly.notimeout
+timeout: 5

@@ -1,12 +1,19 @@
 name: "mttsFly"
 main: me.mttprvst13.fly
-version: "1.5.2 BETA"
+version: "1.5.4 BETA"
 description: "A plugin that adds fly mode."
 author: mttprvst13
 commands:
    fly:
       description: Toggles fly mode.
       usage: /<command> [playername] [on|off]
+   flyspeed:
+      description: Sets fly speed.
+      usage: /<command> [1-10] [playername]
+#   flying:
+#      description: Checks if a player is flying.
+#      usage: /<command> <playername>
+      
 
 permissions:
     mfly.*:
